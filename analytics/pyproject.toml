@@ -1,0 +1,30 @@
+[project]
+name = "analytics-stuff"
+version = "0.1.0"
+requires-python = ">=3.13"
+source = { editable = "." }
+dependencies = [
+  "jupyter",
+  "pandas",
+  "numpy",
+]
+
+[project.scripts]
+compute = "analytics_stuff.main:compute"
+
+[tool.hatch.build.targets.wheel]
+include = ["analytics_stuff/"]
+
+[build-system]
+requires = ["hatchling", "editables"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+indent-width = 2
+line-length = 100
+
+[tool.ruff.format]
+indent-style = "space"
+line-ending = "auto"
+quote-style = "double"
+skip-magic-trailing-comma = false

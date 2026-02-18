@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+# Backend
+$(nix build --print-out-paths --no-link ../#backend-image) | docker load
+
+# Frontend
+$(nix build --print-out-paths --no-link ../#frontend-image) | docker load

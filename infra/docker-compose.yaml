@@ -1,0 +1,12 @@
+services:
+  backend:
+    # Note: Image name depends on the project name in the Cargo.toml.
+    image: monorepo-with-nix-backend
+    ports:
+      - 3030:3030
+
+  frontend:
+    # Note: Image name depends on the project name in frontend/nix/outputs.nix.
+    image: monorepo-with-nix-fe
+    ports:
+      - 8080:8080
