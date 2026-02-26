@@ -40,12 +40,17 @@
 
         imports = [
           inputs.process-compose-flake.flakeModule
-
-          (inputs.import-tree ./nix)
-          (inputs.import-tree ./analytics/nix)
-          (inputs.import-tree ./frontend/nix)
-          (inputs.import-tree ./backend/nix)
-          (inputs.import-tree ./infra/nix)
+          # Just import any .nix file we find in the entire source tree;
+          # skipping the flake.nix itself.
+          #
+          # Note that you could do this explicitly, if you preferred:
+          #
+          # inputs.import-tree [
+          #   ./nix
+          #   ./analytics/nix
+          #   ...
+          #   ]
+          (inputs.import-tree.filter (p: p != "/flake.nix") ./.)
         ];
       };
 }
