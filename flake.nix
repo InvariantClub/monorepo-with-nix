@@ -25,7 +25,6 @@
 
     # Rust
     crane.url = "github:ipetkov/crane";
-
   };
 
   outputs = inputs:
