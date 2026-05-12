@@ -34,7 +34,7 @@ npm run dev
 _Run the back/front-end stack locally_
 
 ```sh
-nix run .#serve
+nix run .#serve -- --theme "Catppuccin Latte"
 ```
 
 _Same thing, but with docker-compose this time_
